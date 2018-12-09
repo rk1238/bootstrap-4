@@ -42,3 +42,16 @@ body
 {
 	background-color: #512DA8;
 }
+.btn-reserve
+{
+	padding-left: 50px;
+	padding-right: 50px;
+	
+}
+.tab-content
+{
+	border-left: 11px solid #ddd;
+	border-right: 11px solid #ddd;
+	border-bottom: 11px solid #ddd;
+	padding: 10px;
+}
