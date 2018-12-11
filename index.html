@@ -31,7 +31,7 @@
             <li class="navbar-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
         </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="navloginButton">
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -39,12 +39,12 @@
     </div>
     </nav>
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="loginModal" class="modal fade hide" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times; </button>
+                    <button type="button" class="close" id="loginclose">&times; </button>
                 </div>
                 <div class="modal-body">
                    <form>
@@ -86,7 +86,7 @@
                     <img class="img-fluid" src="img/logo.png">
                 </div>
                 <div class="col-12 col-sm">
-                    <a class="btn btn-secondary mt-2 btn-lg btn-warning btn-reserve" data-toggle="modal" data-target="#reservetable" href="#reservetable">Reserve Table</a>
+                    <a class="btn btn-secondary mt-2 btn-lg btn-warning btn-reserve"  id="reservetableButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -99,10 +99,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>Reserve a Table</h2>
-                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                    <button class="close"  id="closebutton" type="button">&times;</button>
                 </div>
                     
-                    <div class="card-body">
+                    <div class="card-body modal-body">
                         <form>
                             <div class="form-group row">
                                 <label for="nubberofguests" class="col-12 col-sm-4 col-md-3 col-lg-2 col-form-label">Number of Guests</label>
@@ -328,6 +328,18 @@
                 $("#carouselButtonDo").children("span").removeClass("fa-play");
                 $("#carouselButtonDo").children("span").addClass("fa-pause");
                }
+            });
+            $('#navloginButton').click(function(){
+                $('#loginModal').modal('show');
+            });
+            $('#reservetableButton').click(function(){
+                $('#reservetable').modal('show');
+            });
+            $('#closebutton').click(function(){
+                $('#reservetable').modal('hide');
+            });
+            $('#loginclose').click(function(){
+                $('#loginModal').modal('hide');
             });
             
         });
